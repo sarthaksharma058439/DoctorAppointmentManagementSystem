@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>MEDWAY HEALTHCARE</title>
+    <style type="text/css">
+      #wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#content {
+    float: left;
+    position: relative;
+    left: -50%;
+}
+    </style>
+  {% load static %}
+  </head>
+
+    
+
+  {% load static %}
+  <body background="" style="background-size: cover;background-repeat: no-repeat;background-attachment: fixed;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <br><br>
+
+    <div class="card" style="text-align: center;">
+      <div class="card-body">
+         <h3>PERSONAL DETAILS</h3>
+      </div>
+    </div>
+    <br>
+    <div align="center">
+      <img width="120" height="150" src="{% static 'myapp/' %}{{ patient_email }}.jpg">
+    </div>
+    <div id="wrap">
+      <div id="content">
+            
+        <br><br><p><b>Email:</b> {{patient_email}}</p>
+        <br><p><b>Age:</b> {{patient_age}}</p>
+        <br><p><b>Phone:</b> {{patient_phone}}</p>
+        <br><p><b>Aadhaar:</b> {{patient_aadhaar}}</p>
+        <br><p><b>Pan:</b> {{patient_pan}}</p>
+    </div>
+  </div>
+
+  </body>
+</html>

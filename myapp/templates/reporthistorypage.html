@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>MEDWAY HEALTHCARE</title>
+  {% load static %}
+  </head>
+
+
+  {% load static %}
+  <body background="" style="background-size: cover;background-repeat: no-repeat;background-attachment: fixed;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<br>
+    <div class="card" style="text-align: center;">
+      <div class="card-body">
+         <h3>Prescription Report</h3>
+      </div>
+    </div>
+
+    <br><br>
+
+    <form name="reportform" method="POST" style="margin:50px">
+      {% csrf_token %}
+        <div class="form-outline form-white mb-4">
+          <br>
+          <input type="email" name="reportemail" class="form-control form-control-lg" placeholder="Enter Email to download prescription report" required/>
+          <br>
+          <button type="submit" name="book" class="btn btn-success">Download Report</button>
+        </div>
+    </form>
+    
+
+  </body>
+  <script type="text/javascript">
+
+      {% if Flag %}
+          swal({
+            text: "{{ mymessage }}",
+          })
+      {% else %}
+          None
+      {% endif %}
+
+
+    </script>
+
+</html>

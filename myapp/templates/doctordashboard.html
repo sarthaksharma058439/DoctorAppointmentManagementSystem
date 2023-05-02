@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>MEDWAY HEALTHCARE</title>
+  {% load static %}
+  </head>
+
+
+  {% load static %}
+  <body background="" style="background-size: cover;background-repeat: no-repeat;background-attachment: fixed;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <br>
+		<form name="loginform" method="POST">
+        {% csrf_token %}
+    <div align="right" style="margin-right: 50px;">
+    	<button type="submit" name="createpatientreport" class="btn btn-success">Create Patient Report</button>
+    	<button type="submit" name="callpatient" class="btn btn-success">Call Patient</button>
+    	<button type="submit" name="logout2" class="btn btn-success">Logout</button>
+    	<button type="submit" name="personaldetails" class="btn btn-success">Personal Details</button>
+    </div>
+    </div>
+  </form>
+
+    <br><br>
+
+    <div class="card" style="text-align: center;">
+      <div class="card-body">
+         <h3>Patient Appointment Request</h3>
+      </div>
+    </div>
+
+	<br><br>
+	
+
+    <div style="margin:50px;">
+    	<form name="loginform" method="POST">
+        {% csrf_token %}
+    	<div class="input-group mb-3">
+		  <input type="text" name="approvepatient" class="form-control form-control-lg" placeholder="Enter Patient Email ID to Accept Request" required/>
+		  <button style="margin-left: 20px;" class="btn btn-success" name="acceptbutton" type="submit">Approve</button>
+		  <button style="margin-left: 20px;" class="btn btn-success" name="rejectbutton" type="submit">Reject</button>
+		  
+		</div>
+
+		<table class="table table-dark table-striped">
+		  <thead>
+		    <tr>
+		      <th scope="col">Patient Email ID</th>
+		      <th scope="col">Age</th>
+		      <th scope="col">Address</th>
+		      <th scope="col">Date</th>
+		      <th scope="col">Time Slot</th>
+		      <th scope="col">Message</th>
+		      <th scope="col">Status</th>
+		    </tr>
+		  </thead>
+			
+		  <tbody>
+		  	{% for i,j,k,l,m,o,p in request_list %}
+		    <tr>
+		      
+		      <td>{{ i }}</td>
+		      <td>{{ j }}</td>
+		      <td>{{ k }}</td>
+		      <td>{{ l }}</td>
+		      <td>{{ m }}</td>
+		      <td>{{ o }}</td>
+		      <td>{{ p }}</td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+		</form>
+	</div>
+
+	
+    
+
+  </body>
+</html>
